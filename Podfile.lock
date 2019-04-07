@@ -1,0 +1,29 @@
+PODS:
+  - RxCocoa (4.5.0):
+    - RxSwift (>= 4.4.2, ~> 4.4)
+  - RxSwift (4.5.0)
+  - SwiftGen (6.1.0)
+  - SwiftLint (0.30.1)
+
+DEPENDENCIES:
+  - RxCocoa (~> 4.5.0)
+  - RxSwift (~> 4.5.0)
+  - SwiftGen (~> 6.1.0)
+  - SwiftLint (~> 0.30.1)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - RxCocoa
+    - RxSwift
+    - SwiftGen
+    - SwiftLint
+
+SPEC CHECKSUMS:
+  RxCocoa: cbf70265dc65a981d4ac982e513c10cf23df24a0
+  RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
+  SwiftGen: f872ca75cbd17bf7103c17f13dcfa0d9a15667b0
+  SwiftLint: a54bf1fe12b55c68560eb2a7689dfc81458508f7
+
+PODFILE CHECKSUM: 8703a6e670022d4ed2704e5e9ba425c7cfea01bf
+
+COCOAPODS: 1.6.1
