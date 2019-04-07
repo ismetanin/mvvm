@@ -9,13 +9,27 @@
 /* Begin PBXBuildFile section */
 		520951BDFC9CDA9027D82623 /* Pods_mvvm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 837F35ACAD743B129274CB97 /* Pods_mvvm.framework */; };
 		8BFCB4DC225A02CE006B3279 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFCB4DB225A02CE006B3279 /* AppDelegate.swift */; };
-		8BFCB4DE225A02CE006B3279 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFCB4DD225A02CE006B3279 /* ViewController.swift */; };
-		8BFCB4E1225A02CE006B3279 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BFCB4DF225A02CE006B3279 /* Main.storyboard */; };
 		8BFCB4E3225A02D0006B3279 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BFCB4E2225A02D0006B3279 /* Assets.xcassets */; };
 		8BFCB4E6225A02D0006B3279 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BFCB4E4225A02D0006B3279 /* LaunchScreen.storyboard */; };
-		8BFCB4FF225A031C006B3279 /* Gemfile in Resources */ = {isa = PBXBuildFile; fileRef = 8BFCB4FC225A031C006B3279 /* Gemfile */; };
-		8BFCB500225A031C006B3279 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 8BFCB4FD225A031C006B3279 /* Podfile */; };
-		8BFCB504225A0487006B3279 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 8BFCB503225A0487006B3279 /* .swiftlint.yml */; };
+		8BFCB507225A0722006B3279 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFCB506225A0722006B3279 /* ViewModel.swift */; };
+		8BFCB50D225A0784006B3279 /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFCB50C225A0784006B3279 /* ApplicationCoordinator.swift */; };
+		8BFCB50F225A0795006B3279 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFCB50E225A0795006B3279 /* Coordinator.swift */; };
+		8BFCB511225A07A9006B3279 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFCB510225A07A9006B3279 /* BaseCoordinator.swift */; };
+		8BFCB513225A07C2006B3279 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFCB512225A07C2006B3279 /* Router.swift */; };
+		8BFCB515225A07D7006B3279 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFCB514225A07D7006B3279 /* MainRouter.swift */; };
+		8BFCB517225A07F7006B3279 /* Presentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFCB516225A07F7006B3279 /* Presentable.swift */; };
+		8BFCB51A225A0854006B3279 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFCB519225A0854006B3279 /* UIApplication.swift */; };
+		8BFCB51C225A0A29006B3279 /* PostListModuleConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFCB51B225A0A29006B3279 /* PostListModuleConfigurator.swift */; };
+		8BFCB521225A0B1F006B3279 /* PostListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFCB520225A0B1F006B3279 /* PostListViewModel.swift */; };
+		8BFCB523225A0B29006B3279 /* PostListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFCB522225A0B29006B3279 /* PostListViewController.swift */; };
+		8BFCB525225A16FD006B3279 /* ErrorTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFCB524225A16FD006B3279 /* ErrorTracker.swift */; };
+		8BFCB529225A179B006B3279 /* Observable+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFCB528225A179B006B3279 /* Observable+Ext.swift */; };
+		8BFCB52D225A3B4C006B3279 /* PostsAbstractService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFCB52C225A3B4C006B3279 /* PostsAbstractService.swift */; };
+		8BFCB530225A3B5D006B3279 /* PostsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFCB52F225A3B5D006B3279 /* PostsService.swift */; };
+		8BFCB532225A3F13006B3279 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFCB531225A3F13006B3279 /* Post.swift */; };
+		8BFCB535225A401E006B3279 /* UIViewController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFCB534225A401E006B3279 /* UIViewController+Rx.swift */; };
+		8BFCB537225A4386006B3279 /* PostListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFCB536225A4386006B3279 /* PostListTableViewCell.swift */; };
+		8BFCB53E225A4D42006B3279 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFCB53D225A4D42006B3279 /* ActivityIndicator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,8 +46,6 @@
 		837F35ACAD743B129274CB97 /* Pods_mvvm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mvvm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BFCB4D8225A02CE006B3279 /* mvvm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mvvm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BFCB4DB225A02CE006B3279 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8BFCB4DD225A02CE006B3279 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		8BFCB4E0225A02CE006B3279 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8BFCB4E2225A02D0006B3279 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8BFCB4E5225A02D0006B3279 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8BFCB4E7225A02D0006B3279 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -43,6 +55,25 @@
 		8BFCB4FD225A031C006B3279 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		8BFCB4FE225A031C006B3279 /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
 		8BFCB503225A0487006B3279 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
+		8BFCB506225A0722006B3279 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		8BFCB50C225A0784006B3279 /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
+		8BFCB50E225A0795006B3279 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		8BFCB510225A07A9006B3279 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
+		8BFCB512225A07C2006B3279 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		8BFCB514225A07D7006B3279 /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
+		8BFCB516225A07F7006B3279 /* Presentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presentable.swift; sourceTree = "<group>"; };
+		8BFCB519225A0854006B3279 /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
+		8BFCB51B225A0A29006B3279 /* PostListModuleConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListModuleConfigurator.swift; sourceTree = "<group>"; };
+		8BFCB520225A0B1F006B3279 /* PostListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListViewModel.swift; sourceTree = "<group>"; };
+		8BFCB522225A0B29006B3279 /* PostListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListViewController.swift; sourceTree = "<group>"; };
+		8BFCB524225A16FD006B3279 /* ErrorTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorTracker.swift; sourceTree = "<group>"; };
+		8BFCB528225A179B006B3279 /* Observable+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+Ext.swift"; sourceTree = "<group>"; };
+		8BFCB52C225A3B4C006B3279 /* PostsAbstractService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsAbstractService.swift; sourceTree = "<group>"; };
+		8BFCB52F225A3B5D006B3279 /* PostsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsService.swift; sourceTree = "<group>"; };
+		8BFCB531225A3F13006B3279 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		8BFCB534225A401E006B3279 /* UIViewController+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Rx.swift"; sourceTree = "<group>"; };
+		8BFCB536225A4386006B3279 /* PostListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListTableViewCell.swift; sourceTree = "<group>"; };
+		8BFCB53D225A4D42006B3279 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		A3BFC9B0AA890DD94D31B23A /* Pods-mvvm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mvvm.release.xcconfig"; path = "Target Support Files/Pods-mvvm/Pods-mvvm.release.xcconfig"; sourceTree = "<group>"; };
 		E51F1AA955E44A4DF4C72A3E /* Pods-mvvm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mvvm.debug.xcconfig"; path = "Target Support Files/Pods-mvvm/Pods-mvvm.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -98,12 +129,12 @@
 		8BFCB4DA225A02CE006B3279 /* mvvm */ = {
 			isa = PBXGroup;
 			children = (
-				8BFCB4DB225A02CE006B3279 /* AppDelegate.swift */,
-				8BFCB4DD225A02CE006B3279 /* ViewController.swift */,
-				8BFCB4DF225A02CE006B3279 /* Main.storyboard */,
-				8BFCB4E2225A02D0006B3279 /* Assets.xcassets */,
-				8BFCB4E4225A02D0006B3279 /* LaunchScreen.storyboard */,
-				8BFCB4E7225A02D0006B3279 /* Info.plist */,
+				8BFCB50A225A0757006B3279 /* Application */,
+				8BFCB51D225A0A32006B3279 /* User Stories */,
+				8BFCB50B225A075C006B3279 /* Resources */,
+				8BFCB508225A072F006B3279 /* Library */,
+				8BFCB52E225A3B4F006B3279 /* Services */,
+				8BFCB533225A3F16006B3279 /* Model */,
 			);
 			path = mvvm;
 			sourceTree = "<group>";
@@ -125,6 +156,151 @@
 				8BFCB503225A0487006B3279 /* .swiftlint.yml */,
 			);
 			name = "Non-iOS Resources";
+			sourceTree = "<group>";
+		};
+		8BFCB508225A072F006B3279 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				8BFCB52B225A17C4006B3279 /* Base Classes */,
+				8BFCB518225A0811006B3279 /* Coordinators Support */,
+				8BFCB52A225A17BB006B3279 /* Extensions */,
+				8BFCB509225A0735006B3279 /* Protocols */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		8BFCB509225A0735006B3279 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				8BFCB506225A0722006B3279 /* ViewModel.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		8BFCB50A225A0757006B3279 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				8BFCB4DB225A02CE006B3279 /* AppDelegate.swift */,
+				8BFCB50C225A0784006B3279 /* ApplicationCoordinator.swift */,
+				8BFCB4E4225A02D0006B3279 /* LaunchScreen.storyboard */,
+				8BFCB4E7225A02D0006B3279 /* Info.plist */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		8BFCB50B225A075C006B3279 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8BFCB4E2225A02D0006B3279 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		8BFCB518225A0811006B3279 /* Coordinators Support */ = {
+			isa = PBXGroup;
+			children = (
+				8BFCB50E225A0795006B3279 /* Coordinator.swift */,
+				8BFCB510225A07A9006B3279 /* BaseCoordinator.swift */,
+				8BFCB512225A07C2006B3279 /* Router.swift */,
+				8BFCB514225A07D7006B3279 /* MainRouter.swift */,
+				8BFCB516225A07F7006B3279 /* Presentable.swift */,
+			);
+			path = "Coordinators Support";
+			sourceTree = "<group>";
+		};
+		8BFCB51D225A0A32006B3279 /* User Stories */ = {
+			isa = PBXGroup;
+			children = (
+				8BFCB51E225A0A38006B3279 /* Posts */,
+			);
+			path = "User Stories";
+			sourceTree = "<group>";
+		};
+		8BFCB51E225A0A38006B3279 /* Posts */ = {
+			isa = PBXGroup;
+			children = (
+				8BFCB51F225A0A44006B3279 /* PostList */,
+			);
+			path = Posts;
+			sourceTree = "<group>";
+		};
+		8BFCB51F225A0A44006B3279 /* PostList */ = {
+			isa = PBXGroup;
+			children = (
+				8BFCB538225A45D3006B3279 /* Configurator */,
+				8BFCB53A225A45DD006B3279 /* ViewModel */,
+				8BFCB53B225A45E4006B3279 /* View */,
+			);
+			path = PostList;
+			sourceTree = "<group>";
+		};
+		8BFCB52A225A17BB006B3279 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8BFCB519225A0854006B3279 /* UIApplication.swift */,
+				8BFCB528225A179B006B3279 /* Observable+Ext.swift */,
+				8BFCB534225A401E006B3279 /* UIViewController+Rx.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8BFCB52B225A17C4006B3279 /* Base Classes */ = {
+			isa = PBXGroup;
+			children = (
+				8BFCB524225A16FD006B3279 /* ErrorTracker.swift */,
+				8BFCB53D225A4D42006B3279 /* ActivityIndicator.swift */,
+			);
+			path = "Base Classes";
+			sourceTree = "<group>";
+		};
+		8BFCB52E225A3B4F006B3279 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				8BFCB52C225A3B4C006B3279 /* PostsAbstractService.swift */,
+				8BFCB52F225A3B5D006B3279 /* PostsService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		8BFCB533225A3F16006B3279 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8BFCB531225A3F13006B3279 /* Post.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8BFCB538225A45D3006B3279 /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				8BFCB51B225A0A29006B3279 /* PostListModuleConfigurator.swift */,
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
+		8BFCB53A225A45DD006B3279 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8BFCB520225A0B1F006B3279 /* PostListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		8BFCB53B225A45E4006B3279 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8BFCB53C225A45ED006B3279 /* Subviews */,
+				8BFCB522225A0B29006B3279 /* PostListViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8BFCB53C225A45ED006B3279 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				8BFCB536225A4386006B3279 /* PostListTableViewCell.swift */,
+			);
+			path = Subviews;
 			sourceTree = "<group>";
 		};
 		D3940EFE3E8A763B96D1DCDD /* Pods */ = {
@@ -220,12 +396,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8BFCB504225A0487006B3279 /* .swiftlint.yml in Resources */,
-				8BFCB500225A031C006B3279 /* Podfile in Resources */,
-				8BFCB4FF225A031C006B3279 /* Gemfile in Resources */,
 				8BFCB4E6225A02D0006B3279 /* LaunchScreen.storyboard in Resources */,
 				8BFCB4E3225A02D0006B3279 /* Assets.xcassets in Resources */,
-				8BFCB4E1225A02CE006B3279 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,8 +482,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8BFCB4DE225A02CE006B3279 /* ViewController.swift in Sources */,
+				8BFCB515225A07D7006B3279 /* MainRouter.swift in Sources */,
+				8BFCB511225A07A9006B3279 /* BaseCoordinator.swift in Sources */,
+				8BFCB507225A0722006B3279 /* ViewModel.swift in Sources */,
+				8BFCB513225A07C2006B3279 /* Router.swift in Sources */,
+				8BFCB535225A401E006B3279 /* UIViewController+Rx.swift in Sources */,
+				8BFCB537225A4386006B3279 /* PostListTableViewCell.swift in Sources */,
+				8BFCB532225A3F13006B3279 /* Post.swift in Sources */,
+				8BFCB523225A0B29006B3279 /* PostListViewController.swift in Sources */,
+				8BFCB52D225A3B4C006B3279 /* PostsAbstractService.swift in Sources */,
+				8BFCB525225A16FD006B3279 /* ErrorTracker.swift in Sources */,
+				8BFCB530225A3B5D006B3279 /* PostsService.swift in Sources */,
+				8BFCB50F225A0795006B3279 /* Coordinator.swift in Sources */,
 				8BFCB4DC225A02CE006B3279 /* AppDelegate.swift in Sources */,
+				8BFCB51C225A0A29006B3279 /* PostListModuleConfigurator.swift in Sources */,
+				8BFCB50D225A0784006B3279 /* ApplicationCoordinator.swift in Sources */,
+				8BFCB51A225A0854006B3279 /* UIApplication.swift in Sources */,
+				8BFCB53E225A4D42006B3279 /* ActivityIndicator.swift in Sources */,
+				8BFCB517225A07F7006B3279 /* Presentable.swift in Sources */,
+				8BFCB529225A179B006B3279 /* Observable+Ext.swift in Sources */,
+				8BFCB521225A0B1F006B3279 /* PostListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,14 +523,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		8BFCB4DF225A02CE006B3279 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8BFCB4E0225A02CE006B3279 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		8BFCB4E4225A02D0006B3279 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -475,7 +657,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A4NNFV669G;
-				INFOPLIST_FILE = mvvm/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/mvvm/Application/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -495,7 +677,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A4NNFV669G;
-				INFOPLIST_FILE = mvvm/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/mvvm/Application/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
