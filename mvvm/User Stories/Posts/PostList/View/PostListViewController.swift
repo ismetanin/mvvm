@@ -16,6 +16,7 @@ final class PostListViewController: UIViewController {
 
     private lazy var tableView = UITableView()
     private lazy var activityIndicatorView = UIActivityIndicatorView(style: .gray)
+    private lazy var emptyView = UILabel()
 
     // MARK: - Properties
 
@@ -44,6 +45,8 @@ final class PostListViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         tableView.frame = view.bounds
+        emptyView.center = view.center
+        emptyView.sizeToFit()
         activityIndicatorView.center = view.center
     }
 
@@ -56,28 +59,35 @@ final class PostListViewController: UIViewController {
         )
         let output = viewModel.transform(input: input)
 
-        output.list.drive(
-            tableView.rx.items(
-                cellIdentifier: PostListTableViewCell.identifier,
-                cellType: PostListTableViewCell.self
-            )
-        ) { _, post, cell in
-            cell.configure(with: post)
-        }.disposed(by: disposeBag)
+        output.list
+            .drive(
+                tableView.rx.items(
+                    cellIdentifier: PostListTableViewCell.identifier,
+                    cellType: PostListTableViewCell.self
+                )
+            ) { _, post, cell in
+                cell.configure(with: post)
+            }
+            .disposed(by: disposeBag)
 
         output.isLoading
             .drive(activityIndicatorView.rx.isAnimating)
             .disposed(by: disposeBag)
 
+        output.isLoading
+            .drive(emptyView.rx.isHidden)
+            .disposed(by: disposeBag)
+
         output.error
-            .drive(onNext: { error in
-                print(error.localizedDescription)
+            .drive(onNext: { [weak self] error in
+                self?.showAlert(error: error)
             })
             .disposed(by: disposeBag)
     }
 
     private func configureUI() {
         view.backgroundColor = .white
+        view.addSubview(emptyView)
         view.addSubview(tableView)
         view.addSubview(activityIndicatorView)
         tableView.register(
@@ -85,9 +95,11 @@ final class PostListViewController: UIViewController {
             forCellReuseIdentifier: PostListTableViewCell.identifier
         )
         tableView.tableFooterView = UIView()
-        tableView.rx.itemSelected.subscribe(onNext: { index in
-            self.tableView.deselectRow(at: index, animated: true)
+        tableView.rx.itemSelected.subscribe(onNext: { [weak self] index in
+            self?.tableView.deselectRow(at: index, animated: true)
         }).disposed(by: disposeBag)
+        emptyView.text = "Sorry, there is no data"
+        emptyView.textColor = .blue
     }
 
 }

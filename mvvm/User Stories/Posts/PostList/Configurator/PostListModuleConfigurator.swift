@@ -10,10 +10,10 @@ import UIKit
 
 final class PostListModuleConfigurator {
 
-    func configure() -> Presentable {
+    func configure() -> (UIViewController, PostListViewModel) {
         let viewModel = PostListViewModel(service: PostsService())
         let view = PostListViewController(viewModel: viewModel)
-        return UINavigationController(rootViewController: view)
+        return (UINavigationController(rootViewController: view), viewModel)
     }
 
 }

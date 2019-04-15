@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		520951BDFC9CDA9027D82623 /* Pods_mvvm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 837F35ACAD743B129274CB97 /* Pods_mvvm.framework */; };
+		8B122B932264E4B900B52DFB /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B122B922264E4B900B52DFB /* ServiceError.swift */; };
+		8B122B9A2264E85800B52DFB /* PostListModuleConfiguratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B122B992264E85800B52DFB /* PostListModuleConfiguratorTests.swift */; };
+		8B122B9C2264E87D00B52DFB /* XCTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B122B9B2264E87D00B52DFB /* XCTest.swift */; };
+		8B122B9E2264E8FC00B52DFB /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B122B9D2264E8FC00B52DFB /* UIViewController.swift */; };
 		8BFCB4DC225A02CE006B3279 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFCB4DB225A02CE006B3279 /* AppDelegate.swift */; };
 		8BFCB4E3225A02D0006B3279 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BFCB4E2225A02D0006B3279 /* Assets.xcassets */; };
 		8BFCB4E6225A02D0006B3279 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BFCB4E4225A02D0006B3279 /* LaunchScreen.storyboard */; };
@@ -44,6 +48,10 @@
 
 /* Begin PBXFileReference section */
 		837F35ACAD743B129274CB97 /* Pods_mvvm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mvvm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B122B922264E4B900B52DFB /* ServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceError.swift; sourceTree = "<group>"; };
+		8B122B992264E85800B52DFB /* PostListModuleConfiguratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListModuleConfiguratorTests.swift; sourceTree = "<group>"; };
+		8B122B9B2264E87D00B52DFB /* XCTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTest.swift; sourceTree = "<group>"; };
+		8B122B9D2264E8FC00B52DFB /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		8BFCB4D8225A02CE006B3279 /* mvvm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mvvm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BFCB4DB225A02CE006B3279 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8BFCB4E2225A02D0006B3279 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -105,6 +113,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		8B122B942264E4C200B52DFB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8B122B922264E4B900B52DFB /* ServiceError.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		8BFCB4CF225A02CE006B3279 = {
 			isa = PBXGroup;
 			children = (
@@ -143,6 +159,8 @@
 			isa = PBXGroup;
 			children = (
 				8BFCB4F2225A02D0006B3279 /* Info.plist */,
+				8B122B9B2264E87D00B52DFB /* XCTest.swift */,
+				8B122B992264E85800B52DFB /* PostListModuleConfiguratorTests.swift */,
 			);
 			path = mvvmTests;
 			sourceTree = "<group>";
@@ -165,6 +183,7 @@
 				8BFCB518225A0811006B3279 /* Coordinators Support */,
 				8BFCB52A225A17BB006B3279 /* Extensions */,
 				8BFCB509225A0735006B3279 /* Protocols */,
+				8B122B942264E4C200B52DFB /* Models */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -240,6 +259,7 @@
 				8BFCB519225A0854006B3279 /* UIApplication.swift */,
 				8BFCB528225A179B006B3279 /* Observable+Ext.swift */,
 				8BFCB534225A401E006B3279 /* UIViewController+Rx.swift */,
+				8B122B9D2264E8FC00B52DFB /* UIViewController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -368,6 +388,7 @@
 					};
 					8BFCB4EB225A02D0006B3279 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 						TestTargetID = 8BFCB4D7225A02CE006B3279;
 					};
 				};
@@ -494,7 +515,9 @@
 				8BFCB525225A16FD006B3279 /* ErrorTracker.swift in Sources */,
 				8BFCB530225A3B5D006B3279 /* PostsService.swift in Sources */,
 				8BFCB50F225A0795006B3279 /* Coordinator.swift in Sources */,
+				8B122B932264E4B900B52DFB /* ServiceError.swift in Sources */,
 				8BFCB4DC225A02CE006B3279 /* AppDelegate.swift in Sources */,
+				8B122B9E2264E8FC00B52DFB /* UIViewController.swift in Sources */,
 				8BFCB51C225A0A29006B3279 /* PostListModuleConfigurator.swift in Sources */,
 				8BFCB50D225A0784006B3279 /* ApplicationCoordinator.swift in Sources */,
 				8BFCB51A225A0854006B3279 /* UIApplication.swift in Sources */,
@@ -509,6 +532,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B122B9C2264E87D00B52DFB /* XCTest.swift in Sources */,
+				8B122B9A2264E85800B52DFB /* PostListModuleConfiguratorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -665,7 +690,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.ivansmetanin.mvvm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -685,7 +710,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.ivansmetanin.mvvm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -695,6 +720,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A4NNFV669G;
 				INFOPLIST_FILE = mvvmTests/Info.plist;
@@ -705,7 +731,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.ivansmetanin.mvvmTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/mvvm.app/mvvm";
 			};
@@ -716,6 +743,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A4NNFV669G;
 				INFOPLIST_FILE = mvvmTests/Info.plist;
@@ -726,7 +754,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.ivansmetanin.mvvmTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/mvvm.app/mvvm";
 			};

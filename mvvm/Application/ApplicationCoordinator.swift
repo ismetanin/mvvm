@@ -42,7 +42,7 @@ final class ApplicationCoordinator: BaseCoordinator {
 
     private func runPostsFlow() {
         let router = MainRouter()
-        let view = PostListModuleConfigurator().configure()
+        let (view, viewModel) = PostListModuleConfigurator().configure()
         router.setRootModule(view)
     }
 

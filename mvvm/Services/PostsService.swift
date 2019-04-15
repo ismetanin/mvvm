@@ -8,19 +8,10 @@
 
 import RxSwift
 
-enum ServiceError: Error {
-    case cantDecodeResponse
-}
-
-enum Result<T> {
-    case data(T)
-    case error(Error)
-}
-
 final class PostsService: PostsAbstractService {
 
     func getPosts() -> Observable<[Post]> {
-        guard let url = URL(string: "http://jsonplaceholder.typicode.com/posts") else {
+        guard let url = URL(string: "https://jsonplaceholder.typicode.com/posts") else {
             assertionFailure("Can't build url for obtaining posts")
             return Observable.just([])
         }
