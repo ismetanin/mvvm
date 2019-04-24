@@ -14,3 +14,5 @@ struct Post: Codable {
     let title: String
     let body: String
 }
+
+extension Post: Equatable {}

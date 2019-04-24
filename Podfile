@@ -11,11 +11,16 @@ def common_pods
 
     pod 'RxSwift', '~> 4.5.0'
     pod 'RxCocoa', '~> 4.5.0'
+    pod 'RxTest', '~> 4.5.0'
+    pod 'RxBlocking', '~> 4.5.0'
 end
 
 target 'mvvm' do
-
     use_frameworks!
-
     common_pods
+end
+
+target 'mvvmTests' do
+  use_frameworks!
+  common_pods
 end

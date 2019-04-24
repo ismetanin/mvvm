@@ -98,6 +98,7 @@ final class PostListViewController: UIViewController {
         tableView.rx.itemSelected.subscribe(onNext: { [weak self] index in
             self?.tableView.deselectRow(at: index, animated: true)
         }).disposed(by: disposeBag)
+
         emptyView.text = "Sorry, there is no data"
         emptyView.textColor = .blue
     }
