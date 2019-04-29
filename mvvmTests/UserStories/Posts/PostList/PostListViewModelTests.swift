@@ -30,7 +30,7 @@ final class PostListViewModelTests: XCTestCase {
 
     // MARK: - Tests
 
-    func testThatPostsReturnsCorrect() {
+    func testThatPostsEmitsCorrect() {
         // given
         let data: [Post] = [
             Post(userId: 1, id: 1, title: "1", body: "1"),
@@ -39,7 +39,7 @@ final class PostListViewModelTests: XCTestCase {
         let service = MockPostsService(responsePolicy: .returnData(data: data))
         let viewModel = PostListViewModel(service: service)
 
-        let list = scheduler.createObserver([Post].self)
+        let posts = scheduler.createObserver([Post].self)
 
         // when
         let ready = scheduler.createColdObservable([.next(10, ())])
@@ -50,13 +50,72 @@ final class PostListViewModelTests: XCTestCase {
         let output = viewModel.transform(input: input)
 
         // then
-        output.list
-            .drive(list)
+        output.posts
+            .drive(posts)
             .disposed(by: disposeBag)
 
         scheduler.start()
 
-        XCTAssertEqual(list.events, [.next(10, data)])
+        XCTAssertEqual(posts.events, [.next(10, data)])
+    }
+
+    func testThatLoadingEmits() {
+        // given
+        let data: [Post] = [
+            Post(userId: 1, id: 1, title: "1", body: "1"),
+            Post(userId: 2, id: 2, title: "2", body: "2")
+        ]
+        let service = MockPostsService(responsePolicy: .returnData(data: data))
+        let viewModel = PostListViewModel(service: service)
+
+        let isLoading = scheduler.createObserver(Bool.self)
+
+        // when
+        let ready = scheduler.createColdObservable([.next(10, ())])
+            .asDriverOnErrorJustComplete()
+        let showPost = Observable<IndexPath>.empty()
+            .asDriverOnErrorJustComplete()
+        let input = PostListViewModel.Input(ready: ready, showPost: showPost)
+        let output = viewModel.transform(input: input)
+
+        // then
+        output.posts
+            .drive()
+            .disposed(by: disposeBag)
+        output.isLoading
+            .drive(isLoading)
+            .disposed(by: disposeBag)
+
+        scheduler.start()
+
+        XCTAssertEqual(isLoading.events, [.next(0, false), .next(10, true), .next(10, false)])
+    }
+
+    func testThatErrorEmits() {
+        // given
+        let error: Error = NSError(domain: "", code: 0, userInfo: nil)
+        let service = MockPostsService(responsePolicy: .returnError(error: error))
+        let viewModel = PostListViewModel(service: service)
+
+        // when
+        let ready = PublishSubject<Void>()
+        let showPost = Observable<IndexPath>.empty()
+            .asDriverOnErrorJustComplete()
+        let input = PostListViewModel.Input(ready: ready.asDriverOnErrorJustComplete(), showPost: showPost)
+        let output = viewModel.transform(input: input)
+
+        // then
+        output.posts
+            .drive()
+            .disposed(by: disposeBag)
+        output.error
+            .drive()
+            .disposed(by: disposeBag)
+
+        ready.onNext(())
+        let gotError = try? output.error.toBlocking().first()
+
+        XCTAssertNotNil(gotError)
     }
 
     // MARK: - Mocks

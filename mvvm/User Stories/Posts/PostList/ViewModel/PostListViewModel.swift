@@ -20,7 +20,7 @@ final class PostListViewModel: ViewModel {
     }
 
     struct Output {
-        let list: Driver<[Post]>
+        let posts: Driver<[Post]>
         let error: Driver<Error>
         let isLoading: Driver<Bool>
     }
@@ -52,7 +52,7 @@ final class PostListViewModel: ViewModel {
         let error = errorTracker.asDriver()
         let isLoading = activityIndicator.asDriver()
 
-        return Output(list: postsList, error: error, isLoading: isLoading)
+        return Output(posts: postsList, error: error, isLoading: isLoading)
     }
 
 }

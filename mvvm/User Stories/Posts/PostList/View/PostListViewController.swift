@@ -59,7 +59,7 @@ final class PostListViewController: UIViewController {
         )
         let output = viewModel.transform(input: input)
 
-        output.list
+        output.posts
             .drive(
                 tableView.rx.items(
                     cellIdentifier: PostListTableViewCell.identifier,
