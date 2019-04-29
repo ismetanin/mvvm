@@ -25,9 +25,6 @@ final class PostListViewModelTests: XCTestCase {
         scheduler = TestScheduler(initialClock: 0)
     }
 
-    override func tearDown() {
-    }
-
     // MARK: - Tests
 
     func testThatPostsEmitsCorrect() {
@@ -61,11 +58,7 @@ final class PostListViewModelTests: XCTestCase {
 
     func testThatLoadingEmits() {
         // given
-        let data: [Post] = [
-            Post(userId: 1, id: 1, title: "1", body: "1"),
-            Post(userId: 2, id: 2, title: "2", body: "2")
-        ]
-        let service = MockPostsService(responsePolicy: .returnData(data: data))
+        let service = MockPostsService(responsePolicy: .noReturn)
         let viewModel = PostListViewModel(service: service)
 
         let isLoading = scheduler.createObserver(Bool.self)
@@ -88,20 +81,23 @@ final class PostListViewModelTests: XCTestCase {
 
         scheduler.start()
 
-        XCTAssertEqual(isLoading.events, [.next(0, false), .next(10, true), .next(10, false)])
+        XCTAssertEqual(isLoading.events, [.next(0, false), .next(10, true)])
     }
 
     func testThatErrorEmits() {
         // given
-        let error: Error = NSError(domain: "", code: 0, userInfo: nil)
-        let service = MockPostsService(responsePolicy: .returnError(error: error))
+        let data: Error = NSError(domain: "mydomain", code: Int.max, userInfo: nil)
+        let service = MockPostsService(responsePolicy: .returnError(error: data))
         let viewModel = PostListViewModel(service: service)
 
+        let error = scheduler.createObserver(NSError.self)
+
         // when
-        let ready = PublishSubject<Void>()
+        let ready = scheduler.createColdObservable([.next(10, ())])
+            .asDriverOnErrorJustComplete()
         let showPost = Observable<IndexPath>.empty()
             .asDriverOnErrorJustComplete()
-        let input = PostListViewModel.Input(ready: ready.asDriverOnErrorJustComplete(), showPost: showPost)
+        let input = PostListViewModel.Input(ready: ready, showPost: showPost)
         let output = viewModel.transform(input: input)
 
         // then
@@ -109,13 +105,13 @@ final class PostListViewModelTests: XCTestCase {
             .drive()
             .disposed(by: disposeBag)
         output.error
-            .drive()
+            .map { $0 as NSError }
+            .drive(error)
             .disposed(by: disposeBag)
 
-        ready.onNext(())
-        let gotError = try? output.error.toBlocking().first()
+        scheduler.start()
 
-        XCTAssertNotNil(gotError)
+        XCTAssertEqual(error.events, [.next(10, data as NSError)])
     }
 
     // MARK: - Mocks
@@ -141,7 +137,7 @@ final class PostListViewModelTests: XCTestCase {
             case .returnError(let error):
                 return Observable<[Post]>.error(error)
             case .noReturn:
-                return Observable<[Post]>.empty()
+                return PublishSubject<[Post]>().asObservable()
             }
         }
 
