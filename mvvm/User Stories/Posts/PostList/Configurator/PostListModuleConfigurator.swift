@@ -11,7 +11,7 @@ import UIKit
 final class PostListModuleConfigurator {
 
     func configure() -> (UIViewController, PostListViewModel) {
-        let viewModel = PostListViewModel(service: PostsService())
+        let viewModel = PostListViewModel(service: PostsService(session: URLSession.shared))
         let view = PostListViewController(viewModel: viewModel)
         return (UINavigationController(rootViewController: view), viewModel)
     }

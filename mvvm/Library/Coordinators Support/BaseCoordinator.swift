@@ -30,8 +30,8 @@ class BaseCoordinator: Coordinator {
         guard
             !childCoordinators.isEmpty,
             let coordinator = coordinator
-            else {
-                return
+        else {
+            return
         }
 
         for (index, element) in childCoordinators.enumerated() {
@@ -45,8 +45,8 @@ class BaseCoordinator: Coordinator {
     func removeAllChilds() {
         guard
             !childCoordinators.isEmpty
-            else {
-                return
+        else {
+            return
         }
 
         for coordinator in childCoordinators {
@@ -61,8 +61,8 @@ class BaseCoordinator: Coordinator {
     func hasDependency<T>(ofType: T.Type) -> Coordinator? {
         guard
             !childCoordinators.isEmpty
-            else {
-                return nil
+        else {
+            return nil
         }
 
         for coordinator in childCoordinators {

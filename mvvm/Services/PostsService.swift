@@ -10,14 +10,32 @@ import RxSwift
 
 final class PostsService: PostsAbstractService {
 
+    // MARK: - Nested types
+
+    private enum Constants {
+        static let postsURL = URL(string: "posts", relativeTo: URLs.base)
+    }
+
+    // MARK: - Properties
+
+    private let session: NetworkSession
+
+    // MARK: - Initialization and deinitialization
+
+    init(session: NetworkSession) {
+        self.session = session
+    }
+
+    // MARK: - PostsAbstractService
+
     func getPosts() -> Observable<[Post]> {
-        guard let url = URL(string: "https://jsonplaceholder.typicode.com/posts") else {
+        guard let url = Constants.postsURL else {
             assertionFailure("Can't build url for obtaining posts")
             return Observable.just([])
         }
 
         let request = URLRequest(url: url)
-        return URLSession.shared.rx.data(request: request)
+        return session.data(request: request)
                 .map { data -> [Post] in
                     return try JSONDecoder().decode([Post].self, from: data)
                 }
