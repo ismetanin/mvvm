@@ -86,6 +86,7 @@ final class PostListViewController: UIViewController {
     }
 
     private func configureUI() {
+        title = L10n.PostList.title
         view.backgroundColor = .white
         view.addSubview(emptyView)
         view.addSubview(tableView)
@@ -99,7 +100,7 @@ final class PostListViewController: UIViewController {
             self?.tableView.deselectRow(at: index, animated: true)
         }).disposed(by: disposeBag)
 
-        emptyView.text = "Sorry, there is no data"
+        emptyView.text = L10n.PostList.noDataMessage
         emptyView.textColor = .blue
     }
 

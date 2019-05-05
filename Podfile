@@ -4,6 +4,7 @@ inhibit_all_warnings!
 
 def utils
     pod 'SwiftLint', '~> 0.30.1'
+    pod 'SwiftGen', '~> 6.1.0'
 end
 
 def common_pods

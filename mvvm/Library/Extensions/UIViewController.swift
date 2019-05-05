@@ -20,11 +20,15 @@ extension UIViewController {
     @discardableResult
     func showAlert(error: Error) -> UIAlertController {
         let alertController = UIAlertController(
-            title: "Error!",
+            title: L10n.Alerts.Error.title,
             message: error.localizedDescription,
             preferredStyle: .alert
         )
-        let cancelAction = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+        let cancelAction = UIAlertAction(
+            title: L10n.Alerts.Error.cancelActionTitle,
+            style: .cancel,
+            handler: nil
+        )
         alertController.addAction(cancelAction)
         present(alertController, animated: true, completion: nil)
         return alertController

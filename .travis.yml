@@ -1,0 +1,14 @@
+language: Swift
+osx_image: xcode10.2
+xcode_project: mvvm.xcodeproj # path to your xcodeproj folder
+xcode_scheme: mvvm
+
+before_install:
+  - make init
+
+script:
+  - set -o pipefail
+  - xcodebuild test -workspace mvvm.xcworkspace -scheme mvvm -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO -enableCodeCoverage YES -destination 'platform=iOS Simulator,name=iPhone 8,OS=12.2' | xcpretty -c
+  
+after_success:
+  - bash <(curl -s https://codecov.io/bash) -J 'mvvm'

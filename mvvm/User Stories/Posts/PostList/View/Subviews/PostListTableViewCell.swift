@@ -14,6 +14,7 @@ final class PostListTableViewCell: UITableViewCell {
 
     func configure(with post: Post) {
         textLabel?.text = post.title
+        textLabel?.font = UIFont.preferredFont(forTextStyle: .body)
         accessoryType = .disclosureIndicator
     }
 

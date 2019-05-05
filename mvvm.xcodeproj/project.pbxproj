@@ -13,6 +13,9 @@
 		8B122B9A2264E85800B52DFB /* PostListModuleConfiguratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B122B992264E85800B52DFB /* PostListModuleConfiguratorTests.swift */; };
 		8B122B9C2264E87D00B52DFB /* XCTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B122B9B2264E87D00B52DFB /* XCTest.swift */; };
 		8B122B9E2264E8FC00B52DFB /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B122B9D2264E8FC00B52DFB /* UIViewController.swift */; };
+		8BBC120A227F376000C5324C /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBC1209227F376000C5324C /* Strings.swift */; };
+		8BBC120C227F377100C5324C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8BBC120B227F377100C5324C /* Localizable.strings */; };
+		8BBC1214227F380B00C5324C /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBC1213227F380B00C5324C /* Assets.swift */; };
 		8BFCB4DC225A02CE006B3279 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFCB4DB225A02CE006B3279 /* AppDelegate.swift */; };
 		8BFCB4E3225A02D0006B3279 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BFCB4E2225A02D0006B3279 /* Assets.xcassets */; };
 		8BFCB4E6225A02D0006B3279 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BFCB4E4225A02D0006B3279 /* LaunchScreen.storyboard */; };
@@ -56,6 +59,13 @@
 		8B122B992264E85800B52DFB /* PostListModuleConfiguratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListModuleConfiguratorTests.swift; sourceTree = "<group>"; };
 		8B122B9B2264E87D00B52DFB /* XCTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTest.swift; sourceTree = "<group>"; };
 		8B122B9D2264E8FC00B52DFB /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		8BBC1209227F376000C5324C /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		8BBC120B227F377100C5324C /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		8BBC1210227F37C100C5324C /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
+		8BBC1211227F37C100C5324C /* .codecov.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .codecov.yml; sourceTree = "<group>"; };
+		8BBC1212227F37C100C5324C /* swiftgen.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = swiftgen.yml; sourceTree = "<group>"; };
+		8BBC1213227F380B00C5324C /* Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
+		8BBC1217227F393600C5324C /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		8BFCB4D8225A02CE006B3279 /* mvvm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mvvm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BFCB4DB225A02CE006B3279 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8BFCB4E2225A02D0006B3279 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -154,6 +164,31 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		8BBC120D227F377500C5324C /* Strings */ = {
+			isa = PBXGroup;
+			children = (
+				8BBC120B227F377100C5324C /* Localizable.strings */,
+			);
+			path = Strings;
+			sourceTree = "<group>";
+		};
+		8BBC120E227F377C00C5324C /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				8BBC1213227F380B00C5324C /* Assets.swift */,
+				8BBC1209227F376000C5324C /* Strings.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		8BBC120F227F378100C5324C /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				8BFCB4E2225A02D0006B3279 /* Assets.xcassets */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 		8BFCB4CF225A02CE006B3279 = {
 			isa = PBXGroup;
 			children = (
@@ -204,7 +239,11 @@
 				8BFCB4FC225A031C006B3279 /* Gemfile */,
 				8BFCB4FE225A031C006B3279 /* Makefile */,
 				8BFCB4FD225A031C006B3279 /* Podfile */,
+				8BBC1217227F393600C5324C /* .gitignore */,
 				8BFCB503225A0487006B3279 /* .swiftlint.yml */,
+				8BBC1211227F37C100C5324C /* .codecov.yml */,
+				8BBC1210227F37C100C5324C /* .travis.yml */,
+				8BBC1212227F37C100C5324C /* swiftgen.yml */,
 			);
 			name = "Non-iOS Resources";
 			sourceTree = "<group>";
@@ -243,7 +282,9 @@
 		8BFCB50B225A075C006B3279 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				8BFCB4E2225A02D0006B3279 /* Assets.xcassets */,
+				8BBC120E227F377C00C5324C /* Constants */,
+				8BBC120F227F378100C5324C /* Images */,
+				8BBC120D227F377500C5324C /* Strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -375,6 +416,7 @@
 			buildConfigurationList = 8BFCB4F5225A02D0006B3279 /* Build configuration list for PBXNativeTarget "mvvm" */;
 			buildPhases = (
 				4D693665D942595DB4745AD3 /* [CP] Check Pods Manifest.lock */,
+				8BBC1216227F384000C5324C /* SwiftGen */,
 				8BFCB505225A04C4006B3279 /* SwiftLint */,
 				8BFCB4D4225A02CE006B3279 /* Sources */,
 				8BFCB4D5225A02CE006B3279 /* Frameworks */,
@@ -455,6 +497,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8BFCB4E6225A02D0006B3279 /* LaunchScreen.storyboard in Resources */,
+				8BBC120C227F377100C5324C /* Localizable.strings in Resources */,
 				8BFCB4E3225A02D0006B3279 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -518,6 +561,24 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-mvvmTests/Pods-mvvmTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		8BBC1216227F384000C5324C /* SwiftGen */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftGen;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${SRCROOT}/Pods/SwiftGen/bin/swiftgen\n";
 		};
 		8BFCB505225A04C4006B3279 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -596,6 +657,7 @@
 			files = (
 				8BFCB515225A07D7006B3279 /* MainRouter.swift in Sources */,
 				8BFCB511225A07A9006B3279 /* BaseCoordinator.swift in Sources */,
+				8BBC1214227F380B00C5324C /* Assets.swift in Sources */,
 				8BFCB507225A0722006B3279 /* ViewModel.swift in Sources */,
 				8BFCB513225A07C2006B3279 /* Router.swift in Sources */,
 				8BFCB535225A401E006B3279 /* UIViewController+Rx.swift in Sources */,
@@ -616,6 +678,7 @@
 				8BFCB517225A07F7006B3279 /* Presentable.swift in Sources */,
 				8BFCB529225A179B006B3279 /* Observable+Ext.swift in Sources */,
 				8BFCB521225A0B1F006B3279 /* PostListViewModel.swift in Sources */,
+				8BBC120A227F376000C5324C /* Strings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
