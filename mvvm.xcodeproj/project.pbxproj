@@ -14,8 +14,8 @@
 		8B122B9C2264E87D00B52DFB /* XCTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B122B9B2264E87D00B52DFB /* XCTest.swift */; };
 		8B122B9E2264E8FC00B52DFB /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B122B9D2264E8FC00B52DFB /* UIViewController.swift */; };
 		8BBC120A227F376000C5324C /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBC1209227F376000C5324C /* Strings.swift */; };
-		8BBC120C227F377100C5324C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8BBC120B227F377100C5324C /* Localizable.strings */; };
 		8BBC1214227F380B00C5324C /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBC1213227F380B00C5324C /* Assets.swift */; };
+		8BBC121A227F41A400C5324C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8BBC121C227F41A400C5324C /* Localizable.strings */; };
 		8BFCB4DC225A02CE006B3279 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFCB4DB225A02CE006B3279 /* AppDelegate.swift */; };
 		8BFCB4E3225A02D0006B3279 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BFCB4E2225A02D0006B3279 /* Assets.xcassets */; };
 		8BFCB4E6225A02D0006B3279 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BFCB4E4225A02D0006B3279 /* LaunchScreen.storyboard */; };
@@ -60,16 +60,17 @@
 		8B122B9B2264E87D00B52DFB /* XCTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTest.swift; sourceTree = "<group>"; };
 		8B122B9D2264E8FC00B52DFB /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		8BBC1209227F376000C5324C /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
-		8BBC120B227F377100C5324C /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		8BBC1210227F37C100C5324C /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
 		8BBC1211227F37C100C5324C /* .codecov.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .codecov.yml; sourceTree = "<group>"; };
 		8BBC1212227F37C100C5324C /* swiftgen.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = swiftgen.yml; sourceTree = "<group>"; };
 		8BBC1213227F380B00C5324C /* Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		8BBC1217227F393600C5324C /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		8BBC1219227F3F2200C5324C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		8BBC121B227F41A400C5324C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8BBC121E227F41F200C5324C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8BFCB4D8225A02CE006B3279 /* mvvm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mvvm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BFCB4DB225A02CE006B3279 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8BFCB4E2225A02D0006B3279 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		8BFCB4E5225A02D0006B3279 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8BFCB4E7225A02D0006B3279 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8BFCB4EC225A02D0006B3279 /* mvvmTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mvvmTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BFCB4F2225A02D0006B3279 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -167,7 +168,7 @@
 		8BBC120D227F377500C5324C /* Strings */ = {
 			isa = PBXGroup;
 			children = (
-				8BBC120B227F377100C5324C /* Localizable.strings */,
+				8BBC121C227F41A400C5324C /* Localizable.strings */,
 			);
 			path = Strings;
 			sourceTree = "<group>";
@@ -253,6 +254,7 @@
 				8BBC1211227F37C100C5324C /* .codecov.yml */,
 				8BBC1210227F37C100C5324C /* .travis.yml */,
 				8BBC1212227F37C100C5324C /* swiftgen.yml */,
+				8BBC1219227F3F2200C5324C /* README.md */,
 			);
 			name = "Non-iOS Resources";
 			sourceTree = "<group>";
@@ -505,7 +507,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8BFCB4E6225A02D0006B3279 /* LaunchScreen.storyboard in Resources */,
-				8BBC120C227F377100C5324C /* Localizable.strings in Resources */,
+				8BBC121A227F41A400C5324C /* Localizable.strings in Resources */,
 				8BFCB4E3225A02D0006B3279 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -711,10 +713,18 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		8BBC121C227F41A400C5324C /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8BBC121B227F41A400C5324C /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		8BFCB4E4225A02D0006B3279 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				8BFCB4E5225A02D0006B3279 /* Base */,
+				8BBC121E227F41F200C5324C /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";

@@ -6,7 +6,7 @@ xcassets:
       output: mvvm/Resources/Constants/Assets.swift
 
 strings:
-  inputs: mvvm/Resources/Strings/Localizable.strings
+  inputs: mvvm/Resources/Strings/en.lproj/Localizable.strings
   outputs:
     - templateName: structured-swift4
       output: mvvm/Resources/Constants/Strings.swift
