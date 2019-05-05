@@ -189,6 +189,15 @@
 			path = Images;
 			sourceTree = "<group>";
 		};
+		8BBC1218227F3E3300C5324C /* Rx */ = {
+			isa = PBXGroup;
+			children = (
+				8BFCB528225A179B006B3279 /* Observable+Ext.swift */,
+				8BFCB534225A401E006B3279 /* UIViewController+Rx.swift */,
+			);
+			path = Rx;
+			sourceTree = "<group>";
+		};
 		8BFCB4CF225A02CE006B3279 = {
 			isa = PBXGroup;
 			children = (
@@ -330,9 +339,8 @@
 		8BFCB52A225A17BB006B3279 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				8BBC1218227F3E3300C5324C /* Rx */,
 				8BFCB519225A0854006B3279 /* UIApplication.swift */,
-				8BFCB528225A179B006B3279 /* Observable+Ext.swift */,
-				8BFCB534225A401E006B3279 /* UIViewController+Rx.swift */,
 				8B122B9D2264E8FC00B52DFB /* UIViewController.swift */,
 			);
 			path = Extensions;
