@@ -44,10 +44,15 @@ final class PostListViewController: UIViewController {
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        tableView.frame = view.bounds
-        emptyView.center = view.center
-        emptyView.sizeToFit()
-        activityIndicatorView.center = view.center
+        tableView.pin
+            .all(view.pin.safeArea)
+        emptyView.pin
+            .start(16)
+            .end(16)
+            .center()
+            .sizeToFit(.width)
+        activityIndicatorView.pin
+            .center()
     }
 
     // MARK: - Private methods
@@ -82,6 +87,10 @@ final class PostListViewController: UIViewController {
             .drive(onNext: { [weak self] error in
                 self?.showAlert(error: error)
             })
+            .disposed(by: disposeBag)
+
+        output.selectedPost
+            .drive()
             .disposed(by: disposeBag)
     }
 

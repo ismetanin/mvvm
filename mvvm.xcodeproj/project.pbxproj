@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		520951BDFC9CDA9027D82623 /* Pods_mvvm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 837F35ACAD743B129274CB97 /* Pods_mvvm.framework */; };
+		8B02CECA228344C400F9F7A5 /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B02CEC9228344C400F9F7A5 /* PostDetailViewController.swift */; };
+		8B02CED02283458000F9F7A5 /* PostDetailModuleConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B02CECF2283458000F9F7A5 /* PostDetailModuleConfigurator.swift */; };
+		8B0EF7F9228485E0000403EC /* PostDetailModuleConfiguratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0EF7F8228485E0000403EC /* PostDetailModuleConfiguratorTests.swift */; };
+		8B0EF7FC22848697000403EC /* PostListModuleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0EF7FB22848697000403EC /* PostListModuleOutput.swift */; };
 		8B1020A7226CA4FF0096FFB1 /* PostListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1020A6226CA4FF0096FFB1 /* PostListViewModelTests.swift */; };
 		8B122B932264E4B900B52DFB /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B122B922264E4B900B52DFB /* ServiceError.swift */; };
 		8B122B9A2264E85800B52DFB /* PostListModuleConfiguratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B122B992264E85800B52DFB /* PostListModuleConfiguratorTests.swift */; };
@@ -58,6 +62,10 @@
 /* Begin PBXFileReference section */
 		12B4DEB9658214E7851DD788 /* Pods_mvvmTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mvvmTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		837F35ACAD743B129274CB97 /* Pods_mvvm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mvvm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B02CEC9228344C400F9F7A5 /* PostDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
+		8B02CECF2283458000F9F7A5 /* PostDetailModuleConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailModuleConfigurator.swift; sourceTree = "<group>"; };
+		8B0EF7F8228485E0000403EC /* PostDetailModuleConfiguratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailModuleConfiguratorTests.swift; sourceTree = "<group>"; };
+		8B0EF7FB22848697000403EC /* PostListModuleOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListModuleOutput.swift; sourceTree = "<group>"; };
 		8B1020A6226CA4FF0096FFB1 /* PostListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListViewModelTests.swift; sourceTree = "<group>"; };
 		8B122B922264E4B900B52DFB /* ServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceError.swift; sourceTree = "<group>"; };
 		8B122B992264E85800B52DFB /* PostListModuleConfiguratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListModuleConfiguratorTests.swift; sourceTree = "<group>"; };
@@ -140,6 +148,23 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		8B02CED12283458800F9F7A5 /* PostDetail */ = {
+			isa = PBXGroup;
+			children = (
+				8B02CECF2283458000F9F7A5 /* PostDetailModuleConfigurator.swift */,
+				8B02CEC9228344C400F9F7A5 /* PostDetailViewController.swift */,
+			);
+			path = PostDetail;
+			sourceTree = "<group>";
+		};
+		8B0EF7FA228485E4000403EC /* PostDetail */ = {
+			isa = PBXGroup;
+			children = (
+				8B0EF7F8228485E0000403EC /* PostDetailModuleConfiguratorTests.swift */,
+			);
+			path = PostDetail;
+			sourceTree = "<group>";
+		};
 		8B1020A4226CA4E20096FFB1 /* UserStories */ = {
 			isa = PBXGroup;
 			children = (
@@ -152,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				8B1020A8226CA5020096FFB1 /* PostList */,
+				8B0EF7FA228485E4000403EC /* PostDetail */,
 			);
 			path = Posts;
 			sourceTree = "<group>";
@@ -328,6 +354,7 @@
 			isa = PBXGroup;
 			children = (
 				8BFCB51E225A0A38006B3279 /* Posts */,
+				8B02CED12283458800F9F7A5 /* PostDetail */,
 			);
 			path = "User Stories";
 			sourceTree = "<group>";
@@ -390,6 +417,7 @@
 			isa = PBXGroup;
 			children = (
 				8BFCB51B225A0A29006B3279 /* PostListModuleConfigurator.swift */,
+				8B0EF7FB22848697000403EC /* PostListModuleOutput.swift */,
 			);
 			path = Configurator;
 			sourceTree = "<group>";
@@ -565,18 +593,18 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-mvvmTests/Pods-mvvmTests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/RxBlocking/RxBlocking.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxBlocking/RxBlocking.framework",
 				"${BUILT_PRODUCTS_DIR}/RxTest/RxTest.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxBlocking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxBlocking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxTest.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -629,19 +657,17 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-mvvm/Pods-mvvm-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/RxBlocking/RxBlocking.framework",
+				"${BUILT_PRODUCTS_DIR}/PinLayout/PinLayout.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/RxTest/RxTest.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxBlocking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PinLayout.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxTest.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -690,7 +716,10 @@
 				8BFCB523225A0B29006B3279 /* PostListViewController.swift in Sources */,
 				8BFCB52D225A3B4C006B3279 /* PostsAbstractService.swift in Sources */,
 				8BFCB525225A16FD006B3279 /* ErrorTracker.swift in Sources */,
+				8B02CECA228344C400F9F7A5 /* PostDetailViewController.swift in Sources */,
 				8BFCB530225A3B5D006B3279 /* PostsService.swift in Sources */,
+				8B0EF7FC22848697000403EC /* PostListModuleOutput.swift in Sources */,
+				8B02CED02283458000F9F7A5 /* PostDetailModuleConfigurator.swift in Sources */,
 				8BFCB50F225A0795006B3279 /* Coordinator.swift in Sources */,
 				8B122B932264E4B900B52DFB /* ServiceError.swift in Sources */,
 				8BFCB4DC225A02CE006B3279 /* AppDelegate.swift in Sources */,
@@ -711,6 +740,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B122B9C2264E87D00B52DFB /* XCTest.swift in Sources */,
+				8B0EF7F9228485E0000403EC /* PostDetailModuleConfiguratorTests.swift in Sources */,
 				8BBC1224227F4DB400C5324C /* PostsServiceTests.swift in Sources */,
 				8B1020A7226CA4FF0096FFB1 /* PostListViewModelTests.swift in Sources */,
 				8B122B9A2264E85800B52DFB /* PostListModuleConfiguratorTests.swift in Sources */,

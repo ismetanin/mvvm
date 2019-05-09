@@ -1,4 +1,5 @@
 PODS:
+  - PinLayout (1.8.7)
   - RxBlocking (4.5.0):
     - RxSwift (>= 4.4.2, ~> 4.4)
   - RxCocoa (4.5.0):
@@ -10,6 +11,7 @@ PODS:
   - SwiftLint (0.30.1)
 
 DEPENDENCIES:
+  - PinLayout (~> 1.8.7)
   - RxBlocking (~> 4.5.0)
   - RxCocoa (~> 4.5.0)
   - RxSwift (~> 4.5.0)
@@ -19,6 +21,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - PinLayout
     - RxBlocking
     - RxCocoa
     - RxSwift
@@ -27,6 +30,7 @@ SPEC REPOS:
     - SwiftLint
 
 SPEC CHECKSUMS:
+  PinLayout: a0722a5c8f0e0168a9c091ffe4930dabf0c8582c
   RxBlocking: 79413e4d916f44bb3e113c5b2cc059e36fe58910
   RxCocoa: cbf70265dc65a981d4ac982e513c10cf23df24a0
   RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
@@ -34,6 +38,6 @@ SPEC CHECKSUMS:
   SwiftGen: f872ca75cbd17bf7103c17f13dcfa0d9a15667b0
   SwiftLint: a54bf1fe12b55c68560eb2a7689dfc81458508f7
 
-PODFILE CHECKSUM: 9d612c01d9a4e8e27f33909e7c261a333fe50e80
+PODFILE CHECKSUM: 85a8606fbb134a3c35fa1d5265cb666e702cd95e
 
 COCOAPODS: 1.6.1

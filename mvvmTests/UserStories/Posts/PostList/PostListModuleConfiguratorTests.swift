@@ -13,8 +13,8 @@ final class PostListModuleConfiguratorTests: XCTestCase {
 
     func testDeallocation() {
         assertDeallocation(of: {
-            let (view, viewModel) = PostListModuleConfigurator().configure()
-            return (view, [viewModel])
+            let (view, output) = PostListModuleConfigurator().configure()
+            return (view, [output])
         })
     }
 

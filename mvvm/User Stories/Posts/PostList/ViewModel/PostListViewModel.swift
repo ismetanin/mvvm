@@ -10,7 +10,11 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-final class PostListViewModel: ViewModel {
+final class PostListViewModel: ViewModel, PostListModuleOutput {
+
+    // MARK: - PostListModuleOutput
+
+    var onShowDetail: ((Post) -> Void)?
 
     // MARK: - Nested types
 
@@ -23,6 +27,7 @@ final class PostListViewModel: ViewModel {
         let posts: Driver<[Post]>
         let error: Driver<Error>
         let isLoading: Driver<Bool>
+        let selectedPost: Driver<Post>
     }
 
     // MARK: - Properties
@@ -49,10 +54,22 @@ final class PostListViewModel: ViewModel {
                     .asDriverOnErrorJustComplete()
             }
 
+        let selectedPost = input.showPost
+            .withLatestFrom(postsList) { (indexPath, posts) -> Post in
+                return posts[indexPath.row]
+            }
+            .do(onNext: showPostDetail)
+
         let error = errorTracker.asDriver()
         let isLoading = activityIndicator.asDriver()
 
-        return Output(posts: postsList, error: error, isLoading: isLoading)
+        return Output(posts: postsList, error: error, isLoading: isLoading, selectedPost: selectedPost)
+    }
+
+    // MARK: - Private methods
+
+    private func showPostDetail(_ post: Post) {
+        onShowDetail?(post)
     }
 
 }

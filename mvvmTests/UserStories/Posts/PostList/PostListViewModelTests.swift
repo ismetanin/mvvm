@@ -114,6 +114,32 @@ final class PostListViewModelTests: XCTestCase {
         XCTAssertEqual(error.events, [.next(10, data as NSError)])
     }
 
+    func testThatShowPostTriggersPostSelection() {
+        // given
+        let post = Post(userId: 1, id: 1, title: "1", body: "1")
+        let service = MockPostsService(responsePolicy: .returnData(data: [post]))
+        let viewModel = PostListViewModel(service: service)
+
+        let showPostObserver = scheduler.createObserver(Post.self)
+        // when
+        let ready = scheduler.createColdObservable([.next(10, ())])
+            .asDriverOnErrorJustComplete()
+        let showPost = scheduler.createColdObservable([.next(10, IndexPath(row: 0, section: 0))])
+            .asDriverOnErrorJustComplete()
+        let input = PostListViewModel.Input(ready: ready, showPost: showPost)
+        let output = viewModel.transform(input: input)
+        // then
+        output.posts
+            .drive()
+            .disposed(by: disposeBag)
+        output.selectedPost
+            .drive(showPostObserver)
+            .disposed(by: disposeBag)
+        scheduler.start()
+
+        XCTAssertEqual(showPostObserver.events, [.next(10, post)])
+    }
+
     // MARK: - Mocks
 
     private final class MockPostsService: PostsAbstractService {
