@@ -44,7 +44,7 @@ final class ApplicationCoordinator: BaseCoordinator {
         let router = MainRouter()
         let (view, output) = PostListModuleConfigurator().configure()
         output.onShowDetail = { _ in
-            let view = PostDetailModuleConfigurator().configure()
+            let (view, _) = PostDetailModuleConfigurator().configure()
             router.push(view)
         }
         router.setRootModule(view)

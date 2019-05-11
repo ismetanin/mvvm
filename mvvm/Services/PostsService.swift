@@ -22,7 +22,7 @@ final class PostsService: PostsAbstractService {
 
     // MARK: - Initialization and deinitialization
 
-    init(session: NetworkSession) {
+    init(session: NetworkSession = URLSession.shared) {
         self.session = session
     }
 

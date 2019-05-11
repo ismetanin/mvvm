@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 import PinLayout
 
 final class PostDetailViewController: UIViewController {
@@ -19,6 +21,23 @@ final class PostDetailViewController: UIViewController {
     private lazy var authorNameLabel = UILabel()
     private lazy var descriptionLabel = UILabel()
     private lazy var commentsCountLabel = UILabel()
+
+    // MARK: - Properties
+
+    private let disposeBag = DisposeBag()
+    private let viewModel: PostDetailViewModel
+
+    // MARK: - Initialization and deinitialization
+
+    init(viewModel: PostDetailViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+        bind()
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     // MARK: - UIViewController
 
@@ -38,6 +57,10 @@ final class PostDetailViewController: UIViewController {
     }
 
     // MARK: - Private methods
+
+    private func bind() {
+
+    }
 
     private func configureUI() {
         view.backgroundColor = .white
