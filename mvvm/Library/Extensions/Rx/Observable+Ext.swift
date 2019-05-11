@@ -46,3 +46,22 @@ extension ObservableType {
     }
 
 }
+
+extension ObservableType where E == Data {
+
+    /// Maps given data to provided Model type using the JSONDecoder.
+    ///
+    /// - Parameters:
+    ///   - to: Model to which Data should be decoded.
+    ///   - decoder: Decoder that will be used for decoding.
+    /// - Returns: Observable with provided Model.
+    func decode<Model: Decodable>(
+        to: Model.Type,
+        using decoder: JSONDecoder = JSONDecoder()
+        ) -> Observable<Model> {
+        return map { data -> Model in
+            return try decoder.decode(Model.self, from: data)
+        }
+    }
+
+}

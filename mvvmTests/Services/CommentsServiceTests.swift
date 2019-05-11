@@ -1,8 +1,8 @@
 //
-//  PostsServiceTests.swift
+//  CommentsServiceTests.swift
 //  mvvmTests
 //
-//  Created by Ivan Smetanin on 05/05/2019.
+//  Created by Ivan Smetanin on 11/05/2019.
 //  Copyright © 2019 Ivan Smetanin. All rights reserved.
 //
 
@@ -11,7 +11,7 @@ import RxSwift
 import RxBlocking
 @testable import mvvm
 
-final class PostsServiceTests: XCTestCase {
+final class CommentsServiceTests: XCTestCase {
 
     // MARK: - Tests
 
@@ -19,48 +19,42 @@ final class PostsServiceTests: XCTestCase {
         // given
         let data = """
         [
-          {
-            "userId": 1,
-            "id": 1,
-            "title": "sunt aut",
-            "body": "quia et"
-          },
-          {
-            "userId": 1,
-            "id": 2,
-            "title": "qui est",
-            "body": "est rerum"
-          }
+            {
+                "postId": 1
+            },
+            {
+                "postId": 2,
+            }
         ]
         """.data(using: .utf8) ?? Data()
-        let expectedPosts = [
-            Post(userId: 1, id: 1, title: "sunt aut", body: "quia et"),
-            Post(userId: 1, id: 2, title: "qui est", body: "est rerum")
+        let expectedComments = [
+            Comment(postId: 1),
+            Comment(postId: 2)
         ]
         let session = SessionMock(dataRequestResponsePolicy: .returnData(data))
-        let service = PostsService(session: session)
+        let service = CommentsService(session: session)
         // when
-        let posts = try service.getPosts().toBlocking().first()
+        let comments = try service.getComments().toBlocking().first()
         // then
-        XCTAssertEqual(posts, expectedPosts)
+        XCTAssertEqual(comments, expectedComments)
     }
 
     func testInvalidDataMapping() {
         // given
         let data = """
         [
-          {
-            "userId": 1
-          },
-          {
-            "body": "est rerum"
-          }
+            {
+                "name": "id labore ex et quam laborum"
+            },
+            {
+                "id": 2
+            }
         ]
         """.data(using: .utf8) ?? Data()
         let session = SessionMock(dataRequestResponsePolicy: .returnData(data))
-        let service = PostsService(session: session)
+        let service = CommentsService(session: session)
         // when
-        let result = service.getPosts().toBlocking().materialize()
+        let result = service.getComments().toBlocking().materialize()
         // then
         switch result {
         case .completed:
@@ -73,9 +67,9 @@ final class PostsServiceTests: XCTestCase {
     func testThatServiceCallTriggersOnlyOneSessionCall() {
         // given
         let session = SessionMock(dataRequestResponsePolicy: .noReturn)
-        let service = PostsService(session: session)
+        let service = CommentsService(session: session)
         // when
-        _ = service.getPosts()
+        _ = service.getComments()
         // then
         XCTAssertEqual(session.invokedDataRequestCount, 1)
     }

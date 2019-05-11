@@ -35,10 +35,9 @@ final class PostsService: PostsAbstractService {
         }
 
         let request = URLRequest(url: url)
-        return session.data(request: request)
-                .map { data -> [Post] in
-                    return try JSONDecoder().decode([Post].self, from: data)
-                }
+        return session
+            .data(request: request)
+            .decode(to: [Post].self)
     }
 
 }
