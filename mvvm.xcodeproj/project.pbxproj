@@ -54,7 +54,7 @@
 		8BFCB521225A0B1F006B3279 /* PostListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFCB520225A0B1F006B3279 /* PostListViewModel.swift */; };
 		8BFCB523225A0B29006B3279 /* PostListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFCB522225A0B29006B3279 /* PostListViewController.swift */; };
 		8BFCB525225A16FD006B3279 /* ErrorTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFCB524225A16FD006B3279 /* ErrorTracker.swift */; };
-		8BFCB529225A179B006B3279 /* Observable+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFCB528225A179B006B3279 /* Observable+Ext.swift */; };
+		8BFCB529225A179B006B3279 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFCB528225A179B006B3279 /* Observable.swift */; };
 		8BFCB52D225A3B4C006B3279 /* PostsAbstractService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFCB52C225A3B4C006B3279 /* PostsAbstractService.swift */; };
 		8BFCB530225A3B5D006B3279 /* PostsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFCB52F225A3B5D006B3279 /* PostsService.swift */; };
 		8BFCB532225A3F13006B3279 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFCB531225A3F13006B3279 /* Post.swift */; };
@@ -136,7 +136,7 @@
 		8BFCB520225A0B1F006B3279 /* PostListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListViewModel.swift; sourceTree = "<group>"; };
 		8BFCB522225A0B29006B3279 /* PostListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListViewController.swift; sourceTree = "<group>"; };
 		8BFCB524225A16FD006B3279 /* ErrorTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorTracker.swift; sourceTree = "<group>"; };
-		8BFCB528225A179B006B3279 /* Observable+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+Ext.swift"; sourceTree = "<group>"; };
+		8BFCB528225A179B006B3279 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		8BFCB52C225A3B4C006B3279 /* PostsAbstractService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsAbstractService.swift; sourceTree = "<group>"; };
 		8BFCB52F225A3B5D006B3279 /* PostsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsService.swift; sourceTree = "<group>"; };
 		8BFCB531225A3F13006B3279 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
@@ -322,7 +322,7 @@
 		8BBC1218227F3E3300C5324C /* Rx */ = {
 			isa = PBXGroup;
 			children = (
-				8BFCB528225A179B006B3279 /* Observable+Ext.swift */,
+				8BFCB528225A179B006B3279 /* Observable.swift */,
 				8BFCB534225A401E006B3279 /* UIViewController+Rx.swift */,
 			);
 			path = Rx;
@@ -863,7 +863,7 @@
 				8BFCB51A225A0854006B3279 /* UIApplication.swift in Sources */,
 				8BFCB53E225A4D42006B3279 /* ActivityIndicator.swift in Sources */,
 				8BFCB517225A07F7006B3279 /* Presentable.swift in Sources */,
-				8BFCB529225A179B006B3279 /* Observable+Ext.swift in Sources */,
+				8BFCB529225A179B006B3279 /* Observable.swift in Sources */,
 				8BFCB521225A0B1F006B3279 /* PostListViewModel.swift in Sources */,
 				8BBC120A227F376000C5324C /* Strings.swift in Sources */,
 				8BA0796322873BC4003D313F /* User.swift in Sources */,
