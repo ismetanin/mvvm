@@ -49,7 +49,7 @@ final class PostListViewController: UIViewController {
         emptyView.pin
             .start(16)
             .end(16)
-            .center()
+            .vCenter()
             .sizeToFit(.width)
         activityIndicatorView.pin
             .center()
