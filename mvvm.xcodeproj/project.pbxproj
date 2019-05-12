@@ -17,6 +17,10 @@
 		8B122B9A2264E85800B52DFB /* PostListModuleConfiguratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B122B992264E85800B52DFB /* PostListModuleConfiguratorTests.swift */; };
 		8B122B9C2264E87D00B52DFB /* XCTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B122B9B2264E87D00B52DFB /* XCTest.swift */; };
 		8B122B9E2264E8FC00B52DFB /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B122B9D2264E8FC00B52DFB /* UIViewController.swift */; };
+		8B6767662288090A002A7796 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6767652288090A002A7796 /* DataStore.swift */; };
+		8B67676822880943002A7796 /* URLCacheDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B67676722880943002A7796 /* URLCacheDataStore.swift */; };
+		8B67676A22880CE0002A7796 /* URLCacheDataStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B67676922880CE0002A7796 /* URLCacheDataStoreTests.swift */; };
+		8B67676C22882108002A7796 /* DataStoreMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B67676B22882108002A7796 /* DataStoreMock.swift */; };
 		8BA079582287318F003D313F /* PostDetailModuleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA079572287318F003D313F /* PostDetailModuleOutput.swift */; };
 		8BA0795D228732F7003D313F /* UsersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA0795C228732F7003D313F /* UsersService.swift */; };
 		8BA0795F22873A85003D313F /* UsersServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA0795E22873A85003D313F /* UsersServiceTests.swift */; };
@@ -82,6 +86,10 @@
 		8B122B992264E85800B52DFB /* PostListModuleConfiguratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListModuleConfiguratorTests.swift; sourceTree = "<group>"; };
 		8B122B9B2264E87D00B52DFB /* XCTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTest.swift; sourceTree = "<group>"; };
 		8B122B9D2264E8FC00B52DFB /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		8B6767652288090A002A7796 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
+		8B67676722880943002A7796 /* URLCacheDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLCacheDataStore.swift; sourceTree = "<group>"; };
+		8B67676922880CE0002A7796 /* URLCacheDataStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLCacheDataStoreTests.swift; sourceTree = "<group>"; };
+		8B67676B22882108002A7796 /* DataStoreMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStoreMock.swift; sourceTree = "<group>"; };
 		8BA079572287318F003D313F /* PostDetailModuleOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailModuleOutput.swift; sourceTree = "<group>"; };
 		8BA0795C228732F7003D313F /* UsersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersService.swift; sourceTree = "<group>"; };
 		8BA0795E22873A85003D313F /* UsersServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersServiceTests.swift; sourceTree = "<group>"; };
@@ -236,6 +244,7 @@
 			isa = PBXGroup;
 			children = (
 				8BA0795B228732AC003D313F /* Coordinators Support */,
+				8B67676922880CE0002A7796 /* URLCacheDataStoreTests.swift */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -279,6 +288,7 @@
 			isa = PBXGroup;
 			children = (
 				8BA0796F22873D5C003D313F /* SessionMock.swift */,
+				8B67676B22882108002A7796 /* DataStoreMock.swift */,
 			);
 			path = "Global Mocks";
 			sourceTree = "<group>";
@@ -423,6 +433,7 @@
 			children = (
 				8BFCB506225A0722006B3279 /* ViewModel.swift */,
 				8BBC1225227F530000C5324C /* NetworkSession.swift */,
+				8B6767652288090A002A7796 /* DataStore.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -502,6 +513,7 @@
 			children = (
 				8BFCB524225A16FD006B3279 /* ErrorTracker.swift */,
 				8BFCB53D225A4D42006B3279 /* ActivityIndicator.swift */,
+				8B67676722880943002A7796 /* URLCacheDataStore.swift */,
 			);
 			path = "Base Classes";
 			sourceTree = "<group>";
@@ -819,6 +831,7 @@
 				8BBC1222227F4C9400C5324C /* URLs.swift in Sources */,
 				8BFCB515225A07D7006B3279 /* MainRouter.swift in Sources */,
 				8BFCB511225A07A9006B3279 /* BaseCoordinator.swift in Sources */,
+				8B6767662288090A002A7796 /* DataStore.swift in Sources */,
 				8BA0796922873C56003D313F /* CommentsAbstractService.swift in Sources */,
 				8BBC1214227F380B00C5324C /* Assets.swift in Sources */,
 				8BFCB507225A0722006B3279 /* ViewModel.swift in Sources */,
@@ -844,6 +857,7 @@
 				8B122B932264E4B900B52DFB /* ServiceError.swift in Sources */,
 				8BFCB4DC225A02CE006B3279 /* AppDelegate.swift in Sources */,
 				8B122B9E2264E8FC00B52DFB /* UIViewController.swift in Sources */,
+				8B67676822880943002A7796 /* URLCacheDataStore.swift in Sources */,
 				8BFCB51C225A0A29006B3279 /* PostListModuleConfigurator.swift in Sources */,
 				8BFCB50D225A0784006B3279 /* ApplicationCoordinator.swift in Sources */,
 				8BFCB51A225A0854006B3279 /* UIApplication.swift in Sources */,
@@ -865,7 +879,9 @@
 				8BA0797022873D5C003D313F /* SessionMock.swift in Sources */,
 				8BBC1224227F4DB400C5324C /* PostsServiceTests.swift in Sources */,
 				8B1020A7226CA4FF0096FFB1 /* PostListViewModelTests.swift in Sources */,
+				8B67676C22882108002A7796 /* DataStoreMock.swift in Sources */,
 				8BA0795F22873A85003D313F /* UsersServiceTests.swift in Sources */,
+				8B67676A22880CE0002A7796 /* URLCacheDataStoreTests.swift in Sources */,
 				8B122B9A2264E85800B52DFB /* PostListModuleConfiguratorTests.swift in Sources */,
 				8BBC1220227F4BE900C5324C /* BaseCoordinatorTests.swift in Sources */,
 				8BA0796E22873C88003D313F /* CommentsServiceTests.swift in Sources */,

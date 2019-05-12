@@ -17,6 +17,7 @@ final class SessionMock: NetworkSession {
     enum DataRequestResponsePolicy {
         case returnData(Data)
         case noReturn
+        case throwError(Error)
     }
 
     // MARK: - Properties
@@ -39,6 +40,8 @@ final class SessionMock: NetworkSession {
             return Observable<Data>.just(data)
         case .noReturn:
             return PublishSubject<Data>().asObservable()
+        case .throwError(let error):
+            return Observable<Data>.error(error)
         }
     }
 
