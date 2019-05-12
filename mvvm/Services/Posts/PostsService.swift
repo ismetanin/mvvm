@@ -19,11 +19,13 @@ final class PostsService: PostsAbstractService {
     // MARK: - Properties
 
     private let session: NetworkSession
+    private let store: DataStore
 
     // MARK: - Initialization and deinitialization
 
-    init(session: NetworkSession = URLSession.shared) {
+    init(session: NetworkSession = URLSession.shared, store: DataStore = URLCacheDataStore()) {
         self.session = session
+        self.store = store
     }
 
     // MARK: - PostsAbstractService
@@ -37,7 +39,7 @@ final class PostsService: PostsAbstractService {
         let request = URLRequest(url: url)
         return session
             .data(request: request)
-            .decode(to: [Post].self)
+            .process(for: request, decodeTo: [Post].self, store: store)
     }
 
 }

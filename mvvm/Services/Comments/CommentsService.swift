@@ -23,7 +23,7 @@ final class CommentsService: CommentsAbstractService {
 
     // MARK: - Initialization and deinitialization
 
-    init(session: NetworkSession = URLSession.shared, store: DataStore) {
+    init(session: NetworkSession = URLSession.shared, store: DataStore = URLCacheDataStore()) {
         self.session = session
         self.store = store
     }
