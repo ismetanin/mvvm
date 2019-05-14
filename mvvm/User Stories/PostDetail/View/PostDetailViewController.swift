@@ -21,6 +21,7 @@ final class PostDetailViewController: UIViewController {
     private lazy var authorNameLabel = UILabel()
     private lazy var descriptionLabel = UILabel()
     private lazy var commentsCountLabel = UILabel()
+    private lazy var activityIndicatorView = UIActivityIndicatorView(style: .gray)
 
     // MARK: - Properties
 
@@ -59,11 +60,40 @@ final class PostDetailViewController: UIViewController {
     // MARK: - Private methods
 
     private func bind() {
+        let input = PostDetailViewModel.Input(ready: rx.viewDidLoad.asDriver())
+        let output = viewModel.transform(input: input)
+        output.data
+            .drive(onNext: { [weak self] data in
+                self?.fill(with: data)
+            })
+            .disposed(by: disposeBag)
 
+        output.isLoading
+            .drive(activityIndicatorView.rx.isAnimating)
+            .disposed(by: disposeBag)
+
+        output.error
+            .drive(onNext: { [weak self] error in
+                self?.showAlert(error: error)
+            })
+            .disposed(by: disposeBag)
+    }
+
+    private func fill(with data: PostDetailViewData) {
+        titleLabel.text = data.title
+        authorNameLabel.text = data.authorName
+        descriptionLabel.text = data.description
+        commentsCountLabel.text = L10n.PostDetail.numberOfComments(data.commentsCount)
+        view.setNeedsLayout()
     }
 
     private func configureUI() {
         view.backgroundColor = .white
+
+        titleLabel.textColor = .black
+        authorNameLabel.textColor = .black
+        descriptionLabel.textColor = .black
+        commentsCountLabel.textColor = .black
 
         titleLabel.numberOfLines = 0
         authorNameLabel.numberOfLines = 0
@@ -83,6 +113,7 @@ final class PostDetailViewController: UIViewController {
         contentView.addSubview(authorNameLabel)
         contentView.addSubview(descriptionLabel)
         contentView.addSubview(commentsCountLabel)
+        view.addSubview(activityIndicatorView)
     }
 
     private func layout() {
@@ -125,6 +156,9 @@ final class PostDetailViewController: UIViewController {
             width: scrollView.frame.width,
             height: commentsCountLabel.frame.maxY + 16
         )
+
+        activityIndicatorView.pin
+            .center()
     }
 
 }

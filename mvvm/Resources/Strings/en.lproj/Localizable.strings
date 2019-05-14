@@ -13,3 +13,6 @@
 // Alerts
 "Alerts.Error.title" = "Error!";
 "Alerts.Error.cancelActionTitle" = "Ok";
+
+// Post detail
+"PostDetail.numberOfComments" = "Number of comments: %d";

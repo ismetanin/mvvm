@@ -10,15 +10,7 @@ import UIKit
 
 extension UIViewController {
 
-    @discardableResult
-    func showAlert(title: String?, message: String?) -> UIAlertController {
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        present(alertController, animated: true, completion: nil)
-        return alertController
-    }
-
-    @discardableResult
-    func showAlert(error: Error) -> UIAlertController {
+    func showAlert(error: Error) {
         let alertController = UIAlertController(
             title: L10n.Alerts.Error.title,
             message: error.localizedDescription,
@@ -31,7 +23,6 @@ extension UIViewController {
         )
         alertController.addAction(cancelAction)
         present(alertController, animated: true, completion: nil)
-        return alertController
     }
 
 }

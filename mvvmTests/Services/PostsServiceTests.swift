@@ -37,7 +37,8 @@ final class PostsServiceTests: XCTestCase {
             Post(userId: 1, id: 1, title: "sunt aut", body: "quia et"),
             Post(userId: 1, id: 2, title: "qui est", body: "est rerum")
         ]
-        let session = SessionMock(dataRequestResponsePolicy: .returnData(data))
+        let session = NetworkSessionMock()
+        session.stubbedDataResult = Observable<Data>.just(data)
         let service = PostsService(session: session, store: DataStoreMock())
         // when
         let posts = try service.getPosts().toBlocking().first()
@@ -57,7 +58,8 @@ final class PostsServiceTests: XCTestCase {
           }
         ]
         """.data(using: .utf8) ?? Data()
-        let session = SessionMock(dataRequestResponsePolicy: .returnData(data))
+        let session = NetworkSessionMock()
+        session.stubbedDataResult = Observable<Data>.just(data)
         let service = PostsService(session: session, store: DataStoreMock())
         // when
         let result = service.getPosts().toBlocking().materialize()
@@ -72,18 +74,19 @@ final class PostsServiceTests: XCTestCase {
 
     func testThatServiceCallTriggersOnlyOneSessionCall() {
         // given
-        let session = SessionMock(dataRequestResponsePolicy: .noReturn)
+        let session = NetworkSessionMock()
         let service = PostsService(session: session, store: DataStoreMock())
         // when
         _ = service.getPosts()
         // then
-        XCTAssertEqual(session.invokedDataRequestCount, 1)
+        XCTAssertEqual(session.invokedDataCount, 1)
     }
 
     func testThatServiceThrowsError() {
         // given
         let error = NSError(domain: "mvvmtestsdomain", code: 2318, userInfo: nil)
-        let session = SessionMock(dataRequestResponsePolicy: .throwError(error))
+        let session = NetworkSessionMock()
+        session.stubbedDataResult = Observable<Data>.error(error)
         let store = DataStoreMock()
         let service = PostsService(session: session, store: store)
         // when
@@ -115,7 +118,8 @@ final class PostsServiceTests: XCTestCase {
           }
         ]
         """.data(using: .utf8) ?? Data()
-        let session = SessionMock(dataRequestResponsePolicy: .returnData(data))
+        let session = NetworkSessionMock()
+        session.stubbedDataResult = Observable<Data>.just(data)
         let store = DataStoreMock()
         let service = PostsService(session: session, store: store)
         // when
@@ -149,7 +153,8 @@ final class PostsServiceTests: XCTestCase {
             Post(userId: 1, id: 2, title: "qui est", body: "est rerum")
         ]
         let error = NSError(domain: "", code: 0, userInfo: nil)
-        let session = SessionMock(dataRequestResponsePolicy: .throwError(error))
+        let session = NetworkSessionMock()
+        session.stubbedDataResult = Observable<Data>.error(error)
         let store = DataStoreMock()
         store.stubbedLoadResult = data
         let service = PostsService(session: session, store: store)

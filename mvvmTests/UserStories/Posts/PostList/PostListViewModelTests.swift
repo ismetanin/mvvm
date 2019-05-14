@@ -163,7 +163,7 @@ final class PostListViewModelTests: XCTestCase {
             case .returnError(let error):
                 return Observable<[Post]>.error(error)
             case .noReturn:
-                return PublishSubject<[Post]>().asObservable()
+                return Observable<[Post]>.never()
             }
         }
 

@@ -21,6 +21,13 @@ internal enum L10n {
     }
   }
 
+  internal enum PostDetail {
+    /// Number of comments: %d
+    internal static func numberOfComments(_ p1: Int) -> String {
+      return L10n.tr("Localizable", "PostDetail.numberOfComments", p1)
+    }
+  }
+
   internal enum PostList {
     /// Sorry, there is no data
     internal static let noDataMessage = L10n.tr("Localizable", "PostList.noDataMessage")

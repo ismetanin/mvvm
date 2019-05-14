@@ -10,8 +10,12 @@ import UIKit
 
 final class PostDetailModuleConfigurator {
 
-    func configure() -> (UIViewController, PostDetailModuleOutput) {
-        let viewModel = PostDetailViewModel(service: PostsService())
+    func configure(with post: Post) -> (UIViewController, PostDetailModuleOutput) {
+        let viewModel = PostDetailViewModel(
+            post: post,
+            usersService: UsersService(),
+            commentsService: CommentsService()
+        )
         let view = PostDetailViewController(viewModel: viewModel)
         return (view, viewModel)
     }

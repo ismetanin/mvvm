@@ -44,22 +44,14 @@ final class PostListViewController: UIViewController {
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        tableView.pin
-            .all(view.pin.safeArea)
-        emptyView.pin
-            .start(16)
-            .end(16)
-            .vCenter()
-            .sizeToFit(.width)
-        activityIndicatorView.pin
-            .center()
+        layout()
     }
 
     // MARK: - Private methods
 
     private func bind() {
         let input = PostListViewModel.Input(
-            ready: rx.viewWillAppear.asDriver(),
+            ready: rx.viewDidLoad.asDriver(),
             showPost: tableView.rx.itemSelected.asDriver()
         )
         let output = viewModel.transform(input: input)
@@ -111,6 +103,18 @@ final class PostListViewController: UIViewController {
 
         emptyView.text = L10n.PostList.noDataMessage
         emptyView.textColor = .blue
+    }
+
+    private func layout() {
+        tableView.pin
+            .all(view.pin.safeArea)
+        emptyView.pin
+            .start(16)
+            .end(16)
+            .vCenter()
+            .sizeToFit(.width)
+        activityIndicatorView.pin
+            .center()
     }
 
 }
