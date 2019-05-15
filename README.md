@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.org/ismetanin/mvvm.svg?branch=master)](https://travis-ci.org/ismetanin/mvvm) [![codecov](https://codecov.io/gh/ismetanin/mvvm/branch/master/graph/badge.svg)](https://codecov.io/gh/ismetanin/mvvm)
 
 # mvvm
-Little description
+Project with MVVM+RxSwift
 
 ## Requirements
 * iOS 11.0+
