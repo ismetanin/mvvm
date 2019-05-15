@@ -9,7 +9,14 @@
 import Foundation
 
 struct Comment: Decodable {
+    let id: Int
     let postId: Int
 }
 
-extension Comment: Equatable {}
+extension Comment: Equatable {
+
+    static func == (lhs: Comment, rhs: Comment) -> Bool {
+        return lhs.id == rhs.id
+    }
+
+}

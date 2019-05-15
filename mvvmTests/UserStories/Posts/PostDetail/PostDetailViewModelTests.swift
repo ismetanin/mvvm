@@ -31,7 +31,7 @@ final class PostDetailViewModelTests: XCTestCase {
         // given
         let commentsService = MockCommentsService()
         commentsService.getCommentsResponsePolicy = .returnData(data: [
-            Comment(postId: 1), Comment(postId: 2), Comment(postId: 1)
+            Comment(id: 0, postId: 1), Comment(id: 1, postId: 2), Comment(id: 3, postId: 1)
         ])
         let usersService = MockUsersService()
         usersService.getUsersResponsePolicy = .returnData(data: [

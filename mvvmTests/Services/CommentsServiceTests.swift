@@ -20,16 +20,18 @@ final class CommentsServiceTests: XCTestCase {
         let data = """
         [
             {
+                "id": 1,
                 "postId": 1
             },
             {
+                "id": 2,
                 "postId": 2,
             }
         ]
         """.data(using: .utf8) ?? Data()
         let expectedComments = [
-            Comment(postId: 1),
-            Comment(postId: 2)
+            Comment(id: 1, postId: 1),
+            Comment(id: 2, postId: 2)
         ]
         let session = NetworkSessionMock()
         session.stubbedDataResult = Observable<Data>.just(data)
@@ -123,16 +125,18 @@ final class CommentsServiceTests: XCTestCase {
         let data = """
         [
             {
+                "id": 1,
                 "postId": 1
             },
             {
+                "id": 2,
                 "postId": 2,
             }
         ]
         """.data(using: .utf8) ?? Data()
         let expectedComments = [
-            Comment(postId: 1),
-            Comment(postId: 2)
+            Comment(id: 1, postId: 1),
+            Comment(id: 2, postId: 2)
         ]
         let error = NSError(domain: "", code: 0, userInfo: nil)
         let session = NetworkSessionMock()

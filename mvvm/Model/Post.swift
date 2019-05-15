@@ -15,4 +15,10 @@ struct Post: Codable {
     let body: String
 }
 
-extension Post: Equatable {}
+extension Post: Equatable {
+
+    static func == (lhs: Post, rhs: Post) -> Bool {
+        return lhs.id == rhs.id
+    }
+
+}
