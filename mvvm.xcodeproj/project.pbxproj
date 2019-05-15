@@ -489,7 +489,6 @@
 			isa = PBXGroup;
 			children = (
 				8BFCB51E225A0A38006B3279 /* Posts */,
-				8B02CED12283458800F9F7A5 /* PostDetail */,
 			);
 			path = "User Stories";
 			sourceTree = "<group>";
@@ -498,6 +497,7 @@
 			isa = PBXGroup;
 			children = (
 				8BFCB51F225A0A44006B3279 /* PostList */,
+				8B02CED12283458800F9F7A5 /* PostDetail */,
 			);
 			path = Posts;
 			sourceTree = "<group>";
